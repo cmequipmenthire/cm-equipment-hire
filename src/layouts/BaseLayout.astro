@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobileBar from '../components/StickyMobileBar.astro';
+import FloatingDesktopCTA from '../components/FloatingDesktopCTA.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl,
+  ogImage = '/og-default.jpg',
+} = Astro.props;
+
+const canonical = canonicalUrl || Astro.url.href;
+---
+
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JSON-LD Schema -->
+    <slot name="schemaMarkup" />
+
+    <!-- Cloudflare Web Analytics -->
+    <!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_TOKEN"}'></script> -->
+  </head>
+  <body class="min-h-screen bg-surface font-body text-text antialiased pb-14 lg:pb-0">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[10000] focus:bg-white focus:p-4 focus:text-primary font-body"
+    >
+      Skip to content
+    </a>
+
+    <Navigation />
+
+    <main id="main-content" class="pt-16">
+      <slot />
+    </main>
+
+    <Footer />
+    <StickyMobileBar />
+    <FloatingDesktopCTA />
+  </body>
+</html>

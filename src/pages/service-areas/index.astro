@@ -1,0 +1,205 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const pins = [
+  { town: "Perth",         x: 74,  y: 615 },
+  { town: "Corrigin",      x: 137, y: 627 },
+  { town: "Bulyee",        x: 132, y: 631 },
+  { town: "Kweda",         x: 139, y: 630 },
+  { town: "Narrogin",      x: 115, y: 648 },
+  { town: "Brookton",      x: 109, y: 629 },
+  { town: "Beverley",      x: 107, y: 620 },
+  { town: "Pingelly",      x: 109, y: 635 },
+  { town: "East Pingelly", x: 113, y: 636 },
+  { town: "Bruce Rock",    x: 145, y: 613 },
+  { town: "Hyden",         x: 168, y: 631 },
+  { town: "Merredin",      x: 149, y: 599 },
+  { town: "Westonia",      x: 163, y: 593 },
+  { town: "Kellerberrin",  x: 132, y: 605 },
+  { town: "Kulin",         x: 146, y: 639 },
+  { town: "Lake Grace",    x: 155, y: 653 },
+  { town: "Dumbleyung",    x: 132, y: 659 },
+  { town: "Katanning",     x: 127, y: 673 },
+  { town: "Ongerup",       x: 156, y: 683 },
+  { town: "Albany",         x: 137, y: 717 },
+  { town: "Esperance",     x: 262, y: 676 },
+  { town: "Coorow",        x: 77,  y: 546 },
+  { town: "Paraburdoo",    x: 130, y: 323 },
+  { town: "Kalgoorlie",    x: 249, y: 575 },
+];
+---
+
+<BaseLayout
+  title="Equipment Hire Across WA | CM Equipment Hire"
+  description="CM Equipment Hire services all of Western Australia. See where we've worked — Wheatbelt, Pilbara, Great Southern, Goldfields and everywhere in between."
+>
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="bg-[#000000] py-20 px-6">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="font-display text-4xl md:text-5xl text-white mb-4">
+          We Service All of Western Australia
+        </h1>
+        <p class="text-[#94A3B8] text-xl max-w-2xl font-body">
+          From the Wheatbelt to the Pilbara, Great Southern to Esperance —
+          we deliver to your site, wherever the job is in WA.
+        </p>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="bg-[#000000] py-10 px-6">
+      <div class="max-w-2xl mx-auto">
+        <p class="text-[#64748B] text-sm text-center mb-6 font-body">
+          Red pins mark locations where we have completed jobs
+        </p>
+
+        <div class="relative" id="wa-map-container">
+          <div
+            id="map-tooltip"
+            class="absolute z-20 bg-white text-[#000000] font-body font-bold text-sm px-3 py-1 rounded shadow-lg pointer-events-none opacity-0 transition-opacity duration-150 whitespace-nowrap"
+            style="transform: translate(-50%, -160%); top: 0; left: 0;"
+          ></div>
+
+          <svg
+            viewBox="0 0 500 750"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-full h-auto drop-shadow-xl"
+            role="img"
+            aria-label="Map of Western Australia showing CM Equipment Hire job locations"
+          >
+            <path
+              d="M 409,8 L 485,17 L 485,420 L 480,608 L 420,648 L 380,660 L 330,668 L 263,676 L 210,700 L 155,718 L 115,712 L 78,700 L 51,688 L 44,668 L 55,658 L 67,652 L 74,615 L 60,585 L 45,555 L 34,505 L 20,450 L 8,395 L 10,375 L 6,320 L 8,295 L 18,272 L 22,265 L 50,260 L 78,242 L 100,232 L 155,210 L 195,195 L 230,175 L 272,148 L 310,128 L 345,102 L 375,80 L 409,8 Z"
+              fill="#111111"
+              stroke="#333333"
+              stroke-width="1"
+            />
+
+            <text x="195" y="200" font-family="sans-serif" font-size="11" fill="#444444" text-anchor="middle" letter-spacing="2">PILBARA</text>
+            <text x="290" y="510" font-family="sans-serif" font-size="10" fill="#444444" text-anchor="middle" letter-spacing="1">GOLDFIELDS</text>
+            <text x="130" y="570" font-family="sans-serif" font-size="10" fill="#444444" text-anchor="middle" letter-spacing="1">WHEATBELT</text>
+            <text x="120" y="690" font-family="sans-serif" font-size="9" fill="#444444" text-anchor="middle" letter-spacing="1">GREAT SOUTHERN</text>
+            <text x="58" y="640" font-family="sans-serif" font-size="8" fill="#444444" text-anchor="middle" letter-spacing="0.5">SOUTH WEST</text>
+
+            {pins.map(pin => (
+              <g
+                class="map-pin"
+                data-town={pin.town}
+                transform={`translate(${pin.x}, ${pin.y})`}
+                style="cursor: pointer;"
+              >
+                <circle r="9" fill="rgba(220,38,38,0.2)" />
+                <circle r="5" fill="#DC2626" stroke="white" stroke-width="1.5" />
+              </g>
+            ))}
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGIONS FOR SEO -->
+    <section class="bg-surface py-20 px-6">
+      <div class="max-w-5xl mx-auto space-y-10">
+        <h2 class="font-display text-3xl text-[#000000]">Where We Work</h2>
+
+        <div>
+          <h3 class="font-display text-xl text-[#000000] mb-2">Wheatbelt</h3>
+          <p class="text-text-muted font-body">Our home region. Based in Bulyee, we've completed jobs across Corrigin, Narrogin, Merredin, Bruce Rock, Hyden, Kulin, Lake Grace, Pingelly, Kellerberrin, Westonia, Brookton, Beverley, Dumbleyung, Katanning and everywhere in between. Farm dams, drainage, contours, tree clearing, road building — we know this country because we farm it ourselves.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-[#000000] mb-2">Perth Metro & Surrounds</h3>
+          <p class="text-text-muted font-body">Civil earthworks, site preparation, and equipment hire across greater Perth and surrounding regions.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-[#000000] mb-2">Great Southern</h3>
+          <p class="text-text-muted font-body">Servicing Albany, Katanning, Ongerup, Kojonup and surrounding areas for farm and civil earthworks.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-[#000000] mb-2">Pilbara</h3>
+          <p class="text-text-muted font-body">We've worked as far north as Paraburdoo. Regional projects, civil earthworks, and equipment hire for remote WA sites.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-[#000000] mb-2">Goldfields-Esperance</h3>
+          <p class="text-text-muted font-body">Kalgoorlie, Esperance, and surrounding areas for agricultural and civil earthworks.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOWNS GRID -->
+    <section class="bg-[#000000] py-16 px-6">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="font-display text-2xl text-white mb-8">Where We've Worked</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          {pins.map(pin => (
+            <span class="flex items-center gap-2 text-[#94A3B8] font-body text-sm py-1">
+              <span class="w-2 h-2 rounded-full bg-[#DC2626] shrink-0"></span>
+              {pin.town}
+            </span>
+          ))}
+        </div>
+        <div class="mt-12 text-center">
+          <p class="text-[#94A3B8] font-body mb-6">Don't see your area? Call us — if you're in WA, we'll get there.</p>
+          <a
+            href="tel:0487558563"
+            class="inline-block bg-accent text-[#000000] font-body font-bold px-10 py-4 rounded-lg hover:bg-accent-hover transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#000000]"
+          >
+            Call 0487 558 563
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const tooltip = document.getElementById('map-tooltip') as HTMLElement;
+    const container = document.getElementById('wa-map-container');
+
+    document.querySelectorAll('.map-pin').forEach(pin => {
+      pin.addEventListener('mouseenter', () => {
+        const town = (pin as SVGElement).dataset.town;
+        const innerCircle = pin.querySelectorAll('circle')[1];
+        if (innerCircle) innerCircle.setAttribute('r', '7');
+
+        if (tooltip && town && container) {
+          tooltip.textContent = town;
+          tooltip.style.opacity = '1';
+
+          const svgEl = container.querySelector('svg') as SVGElement;
+          const svgRect = svgEl.getBoundingClientRect();
+          const containerRect = container.getBoundingClientRect();
+
+          const transform = (pin as SVGElement).getAttribute('transform') || '';
+          const match = transform.match(/translate\(([^,]+),\s*([^)]+)\)/);
+          if (match) {
+            const svgX = parseFloat(match[1]);
+            const svgY = parseFloat(match[2]);
+            const viewBox = svgEl.viewBox.baseVal;
+            const scaleX = svgRect.width / viewBox.width;
+            const scaleY = svgRect.height / viewBox.height;
+            const screenX = svgRect.left - containerRect.left + svgX * scaleX;
+            const screenY = svgRect.top - containerRect.top + svgY * scaleY;
+            tooltip.style.left = `${screenX}px`;
+            tooltip.style.top = `${screenY}px`;
+          }
+        }
+      });
+
+      pin.addEventListener('mouseleave', () => {
+        const innerCircle = pin.querySelectorAll('circle')[1];
+        if (innerCircle) innerCircle.setAttribute('r', '5');
+        if (tooltip) tooltip.style.opacity = '0';
+      });
+    });
+  </script>
+
+  <script slot="schemaMarkup" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cmequipmenthire.com.au" },
+      { "@type": "ListItem", "position": 2, "name": "Service Areas", "item": "https://cmequipmenthire.com.au/service-areas/" }
+    ]
+  })} />
+</BaseLayout>

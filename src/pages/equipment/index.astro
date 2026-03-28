@@ -1,0 +1,103 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+const allEquipment = await getCollection('equipment');
+const sorted = allEquipment.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+---
+
+<BaseLayout
+  title="Equipment for Hire | CM Equipment Hire WA"
+  description="Caterpillar excavator and articulated dump trucks available for wet or dry hire across Western Australia. Maintained by a qualified diesel mechanic."
+>
+  <script slot="schemaMarkup" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cmequipmenthire.com.au" },
+      { "@type": "ListItem", "position": 2, "name": "Equipment", "item": "https://cmequipmenthire.com.au/equipment/" }
+    ]
+  })} />
+
+  <main id="main-content">
+    <section class="bg-primary py-20 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h1 class="font-display text-4xl md:text-5xl text-white mb-4">Equipment for Hire</h1>
+        <p class="text-[#94A3B8] text-xl max-w-2xl font-body">
+          Late-model Caterpillar machinery. Personally maintained by a qualified diesel mechanic.
+          Wet or dry hire available across Western Australia.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-surface py-20 px-6">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sorted.map((machine) => (
+          <article class="bg-white border border-border rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-all duration-300">
+            <div class="aspect-[4/3] bg-gradient-to-br from-primary-light to-primary overflow-hidden">
+              {machine.data.heroImage ? (
+                <Image
+                  src={machine.data.heroImage}
+                  alt={`${machine.data.name} available for hire in Western Australia`}
+                  class="w-full h-full object-cover"
+                  widths={[400, 800]}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center text-text-muted text-sm font-body">
+                  [Photo coming soon]
+                </div>
+              )}
+            </div>
+            <div class="p-6">
+              <h2 class="font-display text-xl text-primary mb-2">{machine.data.name}</h2>
+              {machine.data.year && (
+                <p class="text-text-muted text-sm font-body mb-3">{machine.data.year} model</p>
+              )}
+              <div class="flex gap-2 mb-4">
+                {machine.data.hireTypes.map((type: string) => (
+                  <span class="text-xs font-body font-medium uppercase tracking-wide px-3 py-1 border border-accent text-accent rounded">
+                    {type === 'wet' ? 'Wet Hire' : 'Dry Hire'}
+                  </span>
+                ))}
+              </div>
+              {machine.data.operatingWeight && (
+                <p class="text-text-muted text-sm font-body mb-1">
+                  <span class="font-medium text-text">Operating Weight:</span> {machine.data.operatingWeight}
+                </p>
+              )}
+              {machine.data.payload && (
+                <p class="text-text-muted text-sm font-body mb-1">
+                  <span class="font-medium text-text">Payload:</span> {machine.data.payload}
+                </p>
+              )}
+              <a
+                href={`/equipment/${machine.data.category}/${machine.data.slug}/`}
+                class="mt-4 inline-block text-accent font-body font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded"
+              >
+                View Details &rarr;
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-primary py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl text-white mb-4">Don't See What You Need?</h2>
+        <p class="text-[#94A3B8] text-lg font-body mb-8">
+          We can source the right machine for your job within 30 days.
+          Tell us what you need and we'll find it.
+        </p>
+        <a
+          href="tel:0487558563"
+          class="inline-block bg-accent text-primary font-body font-bold text-lg px-10 py-4 rounded-lg hover:bg-accent-hover transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+        >
+          Call Us &mdash; 0487 558 563
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cmequipmenthire.com.au/sitemap-index.xml

@@ -1,0 +1,109 @@
+---
+const quickLinks = [
+  { label: 'Equipment', href: '/equipment/' },
+  { label: 'Services', href: '/services/' },
+  { label: 'About', href: '/about/' },
+  { label: 'Contact', href: '/contact/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+];
+
+const serviceAreas = [
+  'Wheatbelt',
+  'Perth Metro',
+  'Great Southern',
+  'Pilbara',
+  'Goldfields',
+];
+---
+
+<footer role="contentinfo" class="bg-primary text-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Column 1: Company -->
+      <div>
+        <a href="/" aria-label="CM Equipment Hire — Home" class="inline-block focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-lg">
+          <img
+            src="/assets/logo.png"
+            alt="CM Equipment Hire"
+            class="h-12 w-auto"
+            loading="lazy"
+          />
+        </a>
+        <p class="mt-3 text-sm text-white/70 font-body">
+          Professional earthmoving and equipment hire across Western Australia.
+        </p>
+        <p class="mt-2 text-sm text-white/50 font-body">
+          ABN: 60 694 105 694
+        </p>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div>
+        <h3 class="font-display text-sm font-bold uppercase tracking-wider text-white">Quick Links</h3>
+        <ul class="mt-4 space-y-2" role="list">
+          {quickLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-sm text-white/70 hover:text-white transition-colors font-body focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 3: Service Areas -->
+      <div>
+        <h3 class="font-display text-sm font-bold uppercase tracking-wider text-white">Service Areas</h3>
+        <ul class="mt-4 space-y-2" role="list">
+          {serviceAreas.map((area) => (
+            <li>
+              <a
+                href="/service-areas/"
+                class="text-sm text-white/70 hover:text-white transition-colors font-body focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded"
+              >
+                {area}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact -->
+      <div>
+        <h3 class="font-display text-sm font-bold uppercase tracking-wider text-white">Contact</h3>
+        <ul class="mt-4 space-y-3" role="list">
+          <li>
+            <a
+              href="tel:0487558563"
+              class="text-sm font-bold text-accent hover:text-accent-hover transition-colors font-body focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded"
+            >
+              0487 558 563
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:cmequipmenthire@gmail.com"
+              class="text-sm text-white/70 hover:text-white transition-colors font-body focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded"
+            >
+              cmequipmenthire@gmail.com
+            </a>
+          </li>
+          <li class="text-sm text-white/70 font-body">
+            <p>Available 24/7</p>
+            <p class="text-white/50">Call us any time</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-12 border-t border-white/10 pt-8 text-center">
+      <p class="text-sm text-white/50 font-body">
+        &copy; 2026 CM Equipment Hire. All rights reserved. | Built in Western Australia
+      </p>
+    </div>
+  </div>
+</footer>

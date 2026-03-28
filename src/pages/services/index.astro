@@ -1,0 +1,268 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Our Services | Equipment Hire & Earthworks WA"
+  description="Dam construction, contour banks, deep drainage, tree clearing, farm road building and dam cleaning across WA. Wet or dry hire. Call CM Equipment Hire on 0487 558 563."
+>
+  <script slot="schemaMarkup" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cmequipmenthire.com.au" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://cmequipmenthire.com.au/services/" }
+    ]
+  })} />
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="bg-primary py-20 px-6">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="font-display text-4xl md:text-5xl text-white mb-4">What We Do</h1>
+        <p class="text-[#94A3B8] text-xl max-w-2xl font-body">
+          Heavy earthworks for WA farmers and contractors. Dam work, drainage, clearing, roads — if it moves dirt, we've got the gear and the experience to get it done.
+        </p>
+        <a href="tel:0487558563" class="mt-8 inline-block bg-accent text-primary font-body font-bold px-8 py-4 rounded-lg hover:bg-accent-hover transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary">
+          Call 0487 558 563
+        </a>
+      </div>
+    </section>
+
+    <!-- SERVICE 1: DAM CONSTRUCTION -->
+    <section id="dam-construction" class="bg-surface py-20 px-6 border-b border-border">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="font-display text-3xl text-primary mb-6">Dam Construction & Levelling/Removing</h2>
+        <div class="space-y-4 text-text font-body text-lg leading-relaxed">
+          <p>Whether you're putting in a new dam, enlarging an existing one, or cleaning out decades of silt, we've done it across the Wheatbelt and we know what works. New builds, spillway construction, turkey nest dams, capacity enlargements — we assess the site, understand the catchment, and build to spec the first time.</p>
+          <p>Dam removal and levelling is equally important — old dams in the wrong location can cause drainage problems and block farming operations. We remove and level them cleanly, restoring paddock trafficability. Every dam job uses our Cat 336E excavator, paired with the Cat 740 or 740B for material movement when volumes demand it.</p>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a href="/equipment/excavators/caterpillar-336e-excavator/" class="text-accent font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent rounded">Cat 336E Excavator &rarr;</a>
+          <a href="/equipment/dump-trucks/caterpillar-740-dump-truck/" class="text-accent font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent rounded">Cat 740 Dump Truck &rarr;</a>
+          <a href="/contact/" class="text-accent font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent rounded">Get a Quote &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE 2: CONTOUR BANKS -->
+    <section id="contour-banks" class="bg-white py-20 px-6 border-b border-border">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="font-display text-3xl text-primary mb-6">Contour Building or Removal</h2>
+        <div class="space-y-4 text-text font-body text-lg leading-relaxed">
+          <p>Contour bank installation and removal is grader work — not excavator work. Our Caterpillar 16M Motor Grader handles both installation and removal of contour banks efficiently, covering large areas in only a few passes. For smaller contours or precision finishing, the Cat 120H Grader with laser control brings accuracy that hand-grading can't match.</p>
+          <p>Removing old contour banks ready for cropping is one of the most common jobs we do in the Wheatbelt. The 16M can strip and level a contour bank fast, leaving a clean, trafficable paddock ready for seeding. Same machine, same operator, same efficiency — whether you're putting them in or taking them out.</p>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a href="/equipment/graders/caterpillar-16m-grader/" class="text-accent font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent rounded">Cat 16M Grader &rarr;</a>
+          <a href="/equipment/graders/caterpillar-120h-grader/" class="text-accent font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent rounded">Cat 120H Laser Grader &rarr;</a>
+          <a href="/contact/" class="text-accent font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent rounded">Get a Quote &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE 3: DEEP DRAINAGE -->
+    <section id="deep-drainage" class="bg-surface py-20 px-6 border-b border-border">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="font-display text-3xl text-primary mb-6">Deep Drainage for Salt or Water Removal</h2>
+        <div class="space-y-4 text-text font-body text-lg leading-relaxed">
+          <p>Dryland salinity and waterlogging cost WA farmers millions in lost production every year. Deep drainage — interceptor drains, relief drains, and deep open channels — is one of the most effective tools for managing both. We have the equipment and the experience to dig to depth in WA's variable soils, including the heavy clays that make drainage work genuinely difficult.</p>
+          <p>The Cat 336E's 7.5-metre dig depth means we can reach the water tables that matter for effective salt interception. We work with farmers and consultants to put drains in the right place at the right grade — not just any trench, but drainage that actually moves water. If you're dealing with salt or a paddock that won't dry out, call us for a site discussion.</p>
+        </div>
+        <div class="mt-6">
+          <a href="/contact/" class="text-accent font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent rounded">Talk to Us About Drainage &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE 4: TREE CLEARING -->
+    <section id="tree-clearing" class="bg-white py-20 px-6 border-b border-border">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="font-display text-3xl text-primary mb-6">Tree Clearing</h2>
+        <div class="space-y-4 text-text font-body text-lg leading-relaxed">
+          <p>Fence line clearing, firebreak maintenance, paddock reclamation, stump removal — tree clearing work varies from paddock tidying to major land reclamation. We operate the Cat 336E for pushing, grabbing, and stacking, and the dump trucks for moving windrows or bulk material off-site when required.</p>
+          <p>Please note: native vegetation clearing in WA requires permits in most circumstances. We recommend checking current requirements with the Department of Primary Industries and Regional Development (DPIRD) and the Department of Biodiversity, Conservation and Attractions (DBCA) before commencing any clearing. We'll work with whatever approvals are in place — we don't advise on the permit process itself.</p>
+        </div>
+        <div class="mt-6">
+          <a href="/contact/" class="text-accent font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent rounded">Enquire About Clearing Work &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE 5: FARM ROAD BUILDING -->
+    <section id="farm-roads" class="bg-surface py-20 px-6 border-b border-border">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="font-display text-3xl text-primary mb-6">Farm Road Building</h2>
+        <div class="space-y-4 text-text font-body text-lg leading-relaxed">
+          <p>A good farm road is worth every cent. Reliable access tracks reduce machine wear, improve harvest trafficability, and make the difference between getting grain off in a wet year or not. We build and rehabilitate farm roads, access tracks, and property laneways using the right combination of cut, fill, and compaction for your soil type and traffic load.</p>
+          <p>For larger volumes — shed pads, silo pads, new laneways with significant earthmoving — the Cat 740 and 740B articulated dump trucks move material fast. The graders finish and grade. We've built roads across the Wheatbelt's range of soils and we know the difference between a road that lasts and one that turns to porridge the first wet winter.</p>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a href="/equipment/graders/caterpillar-16m-grader/" class="text-accent font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent rounded">Cat 16M Grader &rarr;</a>
+          <a href="/equipment/graders/caterpillar-120h-grader/" class="text-accent font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent rounded">Cat 120H Laser Grader &rarr;</a>
+          <a href="/equipment/excavators/caterpillar-336e-excavator/" class="text-accent font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent rounded">Cat 336E Excavator &rarr;</a>
+          <a href="/contact/" class="text-accent font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent rounded">Get a Quote &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE 6: DAM CLEANING -->
+    <section id="dam-cleaning" class="bg-white py-20 px-6 border-b border-border">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="font-display text-3xl text-primary mb-6">Dam Cleaning</h2>
+        <div class="space-y-4 text-text font-body text-lg leading-relaxed">
+          <p>A silted dam is a dam that's losing capacity every year. Regular clean-outs restore storage volume, extend the life of the structure, and protect water quality — whether the dam is used for stock water, crop spraying, firefighting reserves, or irrigation. We desilt dams across the Wheatbelt with the Cat 336E, removing accumulated silt from walls, inlets, and floors.</p>
+          <p>Timing a dam clean-out is usually straightforward — you need the dam as empty as possible, and you need somewhere to put the spoil. We can advise on the best approach for your site and work with your seasonal schedule. A clean-out that takes a few days now saves you from losing significant capacity over the next decade.</p>
+        </div>
+        <div class="mt-6">
+          <a href="/contact/" class="text-accent font-medium hover:underline focus-visible:ring-2 focus-visible:ring-accent rounded">Book a Dam Clean-Out &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WET VS DRY HIRE -->
+    <section id="hire-types" class="bg-primary py-20 px-6">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="font-display text-3xl text-white mb-10">Wet Hire or Dry Hire?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-primary-light rounded-lg p-8">
+            <h3 class="font-display text-2xl text-white mb-4">Wet Hire</h3>
+            <p class="text-[#94A3B8] font-body mb-4">Equipment and an experienced operator. We turn up, we run the machine, we get the job done.</p>
+            <ul class="text-[#94A3B8] font-body space-y-2 text-sm">
+              <li class="flex items-start gap-2"><svg class="h-4 w-4 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Operated by qualified machinery operators</li>
+              <li class="flex items-start gap-2"><svg class="h-4 w-4 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> We handle fuel, logistics, and delivery</li>
+              <li class="flex items-start gap-2"><svg class="h-4 w-4 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Operator insurance is covered</li>
+              <li class="flex items-start gap-2"><svg class="h-4 w-4 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Best for: most farming and earthworks jobs</li>
+            </ul>
+          </div>
+          <div class="bg-primary-light rounded-lg p-8">
+            <h3 class="font-display text-2xl text-white mb-4">Dry Hire</h3>
+            <p class="text-[#94A3B8] font-body mb-4">Equipment only. Your crew, your schedule, your operators.</p>
+            <ul class="text-[#94A3B8] font-body space-y-2 text-sm">
+              <li class="flex items-start gap-2"><svg class="h-4 w-4 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Lower daily rate</li>
+              <li class="flex items-start gap-2"><svg class="h-4 w-4 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Flexible — operate on your schedule</li>
+              <li class="flex items-start gap-2"><svg class="h-4 w-4 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Best for: contractors with their own operators</li>
+              <li class="flex items-start gap-2"><svg class="h-4 w-4 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Insurance and fuel responsibility: hirer</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3-STEP PROCESS -->
+        <h3 class="font-display text-2xl text-white mb-6">How It Works</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="flex gap-4">
+            <span class="font-display text-4xl text-accent opacity-60 shrink-0">01</span>
+            <div>
+              <h4 class="font-display text-lg text-white mb-2">Tell us what you need</h4>
+              <p class="text-[#94A3B8] font-body text-sm">Call us on 0487 558 563. Describe the job, the site, the timing. We'll confirm which machine and hire type suits.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <span class="font-display text-4xl text-accent opacity-60 shrink-0">02</span>
+            <div>
+              <h4 class="font-display text-lg text-white mb-2">We deliver to your site</h4>
+              <p class="text-[#94A3B8] font-body text-sm">We transport equipment to your location anywhere in WA. Mob and demob are quoted separately — no hidden bundled costs.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <span class="font-display text-4xl text-accent opacity-60 shrink-0">03</span>
+            <div>
+              <h4 class="font-display text-lg text-white mb-2">Get the job done</h4>
+              <p class="text-[#94A3B8] font-body text-sm">Wet hire: our operator runs the job. Dry hire: your crew takes over. Either way — the machine is serviced, ready, and reliable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="bg-surface py-20 px-6">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl text-primary mb-10">Common Questions</h2>
+
+        <details class="border-b border-border py-4 group">
+          <summary class="cursor-pointer font-body font-bold text-text list-none flex items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+            What's the difference between wet and dry hire?
+            <svg class="w-5 h-5 text-text-muted shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-muted font-body leading-relaxed">Wet hire includes an experienced operator — we run the machine. Dry hire is equipment only — your crew operates it. Most farm jobs suit wet hire. Contractors with their own licensed operators often prefer dry.</p>
+        </details>
+
+        <details class="border-b border-border py-4 group">
+          <summary class="cursor-pointer font-body font-bold text-text list-none flex items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+            How much does it cost to build a farm dam?
+            <svg class="w-5 h-5 text-text-muted shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-muted font-body leading-relaxed">Dam costs vary significantly depending on size, soil type, catchment, and access. We don't publish rates — call us with the specifics and we'll quote your job properly.</p>
+        </details>
+
+        <details class="border-b border-border py-4 group">
+          <summary class="cursor-pointer font-body font-bold text-text list-none flex items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+            Do you deliver equipment to the Wheatbelt?
+            <svg class="w-5 h-5 text-text-muted shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-muted font-body leading-relaxed">Yes — we're based in the Wheatbelt ourselves. Corrigin, Narrogin, Merredin, Hyden, Lake Grace — all standard. Mob and demob are quoted as a separate line item on every job.</p>
+        </details>
+
+        <details class="border-b border-border py-4 group">
+          <summary class="cursor-pointer font-body font-bold text-text list-none flex items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+            How long does a dam clean-out take?
+            <svg class="w-5 h-5 text-text-muted shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-muted font-body leading-relaxed">A typical farm dam clean-out takes 1–3 days depending on dam size, silt volume, and access. Larger dams or poor site access can extend that. Call us with your dam dimensions for a better estimate.</p>
+        </details>
+
+        <details class="border-b border-border py-4 group">
+          <summary class="cursor-pointer font-body font-bold text-text list-none flex items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+            What machine do you use for contour banks?
+            <svg class="w-5 h-5 text-text-muted shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-muted font-body leading-relaxed">Graders — not excavators. Our Caterpillar 16M Motor Grader is the primary machine for contour bank installation and removal. It covers ground fast and can remove or install large and small contours in only a few passes, leaving the paddock ready for cropping. For precision work, the Cat 120H with laser control ensures accurate grade and fall every time.</p>
+        </details>
+
+        <details class="border-b border-border py-4 group">
+          <summary class="cursor-pointer font-body font-bold text-text list-none flex items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+            Do you work on weekends during seeding and harvest?
+            <svg class="w-5 h-5 text-text-muted shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-muted font-body leading-relaxed">We're available 24/7 — call us any time. We understand that farm timing doesn't respect a 9-to-5 schedule.</p>
+        </details>
+
+        <details class="border-b border-border py-4 group">
+          <summary class="cursor-pointer font-body font-bold text-text list-none flex items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+            What areas do you service?
+            <svg class="w-5 h-5 text-text-muted shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-muted font-body leading-relaxed">All of Western Australia. We're based in Bulyee in the Wheatbelt and have worked from the Pilbara to Esperance. Transport costs increase with distance but we'll quote it honestly.</p>
+        </details>
+
+        <details class="border-b border-border py-4 group">
+          <summary class="cursor-pointer font-body font-bold text-text list-none flex items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+            How do I prepare my site before you arrive?
+            <svg class="w-5 h-5 text-text-muted shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-muted font-body leading-relaxed">For dam work: ensure the dam is as empty as possible and that the access track can handle a 36-tonne machine. For other earthworks: mark out any underground services, fences, or boundaries you want protected. We'll discuss specifics when we quote.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-accent py-16 px-6 text-center">
+      <h2 class="font-display text-3xl text-primary mb-4">Ready to Get Your Project Moving?</h2>
+      <a href="tel:0487558563" class="font-display text-5xl md:text-6xl text-primary font-bold hover:opacity-80 transition-opacity block mb-4 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-accent rounded-lg">0487 558 563</a>
+      <a href="/contact/" class="text-primary font-body font-medium underline focus-visible:ring-2 focus-visible:ring-primary rounded">Or send us an enquiry online &rarr;</a>
+    </section>
+  </main>
+
+  <script slot="schemaMarkup" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "What's the difference between wet and dry hire?", "acceptedAnswer": {"@type": "Answer", "text": "Wet hire includes an experienced operator. Dry hire is equipment only for your crew to operate."}},
+      {"@type": "Question", "name": "Do you deliver equipment to the Wheatbelt?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — we're based in the Wheatbelt ourselves. Mob and demob quoted separately."}},
+      {"@type": "Question", "name": "What areas do you service?", "acceptedAnswer": {"@type": "Answer", "text": "All of Western Australia — from the Pilbara to Esperance."}},
+      {"@type": "Question", "name": "What machine do you use for contour banks?", "acceptedAnswer": {"@type": "Answer", "text": "Graders — not excavators. Our Caterpillar 16M Motor Grader handles contour bank installation and removal, covering large areas in a few passes. For precision work, the Cat 120H with laser control delivers accurate grade and fall."}},
+      {"@type": "Question", "name": "Do you work on weekends?", "acceptedAnswer": {"@type": "Answer", "text": "We're available 24/7 — call us any time on 0487 558 563."}}
+    ]
+  })} />
+</BaseLayout>

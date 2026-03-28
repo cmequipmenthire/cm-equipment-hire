@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #000000;
+  --color-primary-light: #111111;
+  --color-accent: #CFA340;
+  --color-accent-hover: #A37E1A;
+  --color-surface: #F8FAFC;
+  --color-surface-dark: #000000;
+  --color-text: #1E293B;
+  --color-text-muted: #64748B;
+  --color-border: #E2E8F0;
+  --color-success: #059669;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}

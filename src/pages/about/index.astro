@@ -1,0 +1,145 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import ownerPhoto from '../../assets/brand/owner-photo.jpeg';
+
+const values = [
+  {
+    title: 'Reliability',
+    description: "When we say we'll be there, we'll be there. Gear arrives on time, in working order.",
+  },
+  {
+    title: 'Local Knowledge',
+    description: "We farm this country ourselves. We know the soil, the seasons, and what matters.",
+  },
+  {
+    title: 'Safety',
+    description: "Every machine maintained to standard. Every job planned with safety in mind.",
+  },
+  {
+    title: 'Straight Dealing',
+    description: "Clear pricing, honest timelines, no surprises. What we quote is what you pay.",
+  },
+];
+---
+
+<BaseLayout
+  title="About Us | CM Equipment Hire — Wheatbelt WA"
+  description="CM Equipment Hire is based in Bulyee, WA. Owner-operated, mechanic-maintained fleet for Wheatbelt farmers and civil contractors."
+>
+  <script slot="schemaMarkup" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://cmequipmenthire.com.au"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://cmequipmenthire.com.au/about"
+      }
+    ]
+  })} />
+
+  <!-- Header -->
+  <section class="bg-primary text-white -mt-16 pt-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">About CM Equipment Hire</h1>
+      <p class="text-lg text-white/80 font-body max-w-2xl">
+        Owner-operated. Mechanic-maintained. Built for the Wheatbelt.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-3">
+        <h2 class="font-display text-2xl lg:text-3xl text-primary mb-6">Our Story</h2>
+        <div class="space-y-4 font-body text-text text-lg leading-relaxed">
+          <p>
+            Jacob is the owner of CM Equipment Hire. He grew up in the Wheatbelt and farms over 4,000 hectares in the Corrigin area. As a business owner himself, Jacob understands exactly what downtime costs — a machine that breaks down, a job that stalls, a contractor who can't deliver. That's why every piece of equipment in the CM fleet is personally inspected and maintained by Jacob before it leaves for your site.
+          </p>
+          <p>
+            When you're dealing with someone who runs their own operation on the same country you do, you're not dealing with a hire company that sends gear out blind. You're dealing with someone who gets it.
+          </p>
+          <p>
+            Jacob is also a qualified heavy diesel mechanic. That background means the fleet doesn't just look good — it works. No mystery service histories, no deferred maintenance, no surprises when you're mid-job.
+          </p>
+        </div>
+      </div>
+
+      <!-- Owner photo -->
+      <div class="lg:col-span-2">
+        <figure class="rounded-lg overflow-hidden">
+          <Image
+            src={ownerPhoto}
+            alt="Jacob Turner, owner of CM Equipment Hire, with his son Miles"
+            class="w-full h-full object-cover"
+            widths={[400, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <figcaption class="text-center text-sm text-text-muted font-body mt-3">
+            Jacob & Miles Turner — CM Equipment Hire
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Callout 1 -->
+  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-8">
+    <div class="bg-primary border-l-4 border-accent rounded-lg p-6 lg:p-8">
+      <p class="font-body text-white text-lg leading-relaxed">
+        "We're not a city hire company sending gear out blind. We're based in the Wheatbelt, we farm the same country you do, and we understand that when a job needs doing — whether it's seeding or harvest — timing isn't negotiable."
+      </p>
+    </div>
+  </section>
+
+  <!-- Callout 2 -->
+  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="bg-surface border-l-4 border-accent rounded-lg p-6 lg:p-8">
+      <p class="font-body font-bold text-primary text-lg mb-2">Maintenance Commitment</p>
+      <p class="font-body text-text text-lg leading-relaxed">
+        Every machine in the fleet is personally inspected and serviced by the owner, a qualified heavy diesel mechanic. That means no mystery maintenance histories, no breakdowns from deferred servicing, and no surprises on your site.
+      </p>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="bg-white border-t border-border">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <h2 class="font-display text-2xl lg:text-3xl text-primary mb-10">Our Values</h2>
+      <div class="grid sm:grid-cols-2 gap-6 lg:gap-8">
+        {values.map((value) => (
+          <div class="bg-surface border border-border rounded-lg p-6 lg:p-8">
+            <h3 class="font-display text-xl text-primary mb-3">{value.title}</h3>
+            <p class="font-body text-text leading-relaxed">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Phone CTA -->
+  <section class="bg-accent">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16 text-center">
+      <h2 class="font-display text-2xl lg:text-3xl text-primary mb-4">Ready to Talk?</h2>
+      <p class="font-body text-primary/80 text-lg mb-6 max-w-xl mx-auto">
+        Give us a call to discuss your project. No obligation, no hassle.
+      </p>
+      <a
+        href="tel:0487558563"
+        class="inline-flex items-center gap-2 bg-primary text-white font-body font-bold text-lg px-8 py-4 rounded-lg hover:bg-primary-light transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+        0487 558 563
+      </a>
+    </div>
+  </section>
+</BaseLayout>

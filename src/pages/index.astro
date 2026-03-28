@@ -1,0 +1,435 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import heroBg from '../assets/hero-bg.jpeg';
+
+const allEquipment = await getCollection('equipment');
+const featured = allEquipment
+  .filter((e) => e.data.featured)
+  .sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+---
+
+<BaseLayout
+  title="Equipment Hire Wheatbelt & Perth | CM Equipment Hire"
+  description="Heavy equipment wet and dry hire for Wheatbelt farmers, civil contractors, and earthworks projects across Western Australia. Operator-maintained fleet. Delivered to your site."
+>
+  <!-- Schema.org JSON-LD -->
+  <script slot="schemaMarkup" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "CM Equipment Hire",
+    "telephone": "+61487558563",
+    "email": "cmequipmenthire@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "418 Corry Rd",
+      "addressLocality": "Bulyee",
+      "addressRegion": "WA",
+      "postalCode": "6306",
+      "addressCountry": "AU"
+    },
+    "url": "https://cmequipmenthire.com.au",
+    "openingHours": ["Mo-Su 00:00-23:59"],
+    "areaServed": ["Wheatbelt WA", "Perth WA", "Great Southern WA", "Pilbara WA", "Goldfields WA"]
+  })} />
+  <script slot="schemaMarkup" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cmequipmenthire.com.au"
+    }]
+  })} />
+
+  <!-- ============================================
+       SECTION 1 — Hero
+       ============================================ -->
+  <section class="relative flex items-center" style="min-height: 100svh;">
+    <!-- Background image -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <Image
+        src={heroBg}
+        alt="Heavy earthmoving equipment working on a WA farm site"
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+        widths={[768, 1280, 1920]}
+        sizes="100vw"
+      />
+      <div class="absolute inset-0" style="background: rgba(0,0,0,0.65);"></div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-5xl mx-auto px-6 py-32 md:py-40">
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight max-w-4xl">
+        Dams. Drains. Contours. Done&nbsp;Right.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg lg:text-xl text-slate-300 font-body leading-relaxed">
+        Heavy equipment wet and dry hire for Wheatbelt farmers, civil contractors, and earthworks projects across Western Australia. Operator-maintained fleet. Delivered to your site.
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-10 flex flex-col sm:flex-row gap-4">
+        <a
+          href="tel:0487558563"
+          class="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-4 text-lg font-bold text-primary hover:bg-accent-hover transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[48px]"
+        >
+          Call Now &mdash; 0487 558 563
+        </a>
+        <a
+          href="/contact/"
+          class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white/10 transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[48px]"
+        >
+          Request a Quote
+        </a>
+      </div>
+
+      <!-- Trust strip -->
+      <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 max-w-3xl">
+        {[
+          'Fully Insured',
+          'Local Wheatbelt Operator',
+          'Operator-Maintained Fleet',
+          'Wet & Dry Hire',
+        ].map((item) => (
+          <div class="flex items-center gap-2">
+            <svg class="h-5 w-5 flex-shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-sm lg:text-base text-white font-body">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 2 — Social Proof Strip
+       ============================================ -->
+  <section class="bg-primary py-8 border-t border-b border-primary-light">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="font-body text-[#94A3B8] text-lg tracking-wide">
+        Trusted by farmers and contractors across the Wheatbelt and WA
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 3 — What We Do
+       ============================================ -->
+  <section class="bg-surface relative" style="clip-path: polygon(0 0, 100% 60px, 100% 100%, 0 100%); padding-top: 60px;">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+        <h2 class="font-display text-3xl lg:text-4xl font-bold text-primary">What We Do</h2>
+        <p class="mt-4 text-lg text-text-muted font-body">
+          From farm dams to civil earthworks &mdash; we bring the right gear to your site
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Dam Construction -->
+        <a href="/services/#dam-construction" class="group block bg-white border border-border rounded-lg shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 p-6 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
+          <div class="mb-4">
+            <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 28h24M4 28c0-4 4-8 4-12s4-8 8-12M28 28c0-4-4-8-4-12s-4-8-8-12M8 20h16M10 16h12" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-bold text-primary mb-2">Dam Construction</h3>
+          <p class="text-text-muted font-body text-sm leading-relaxed mb-4">New builds, clean-outs, enlargements, and spillway work.</p>
+          <span class="text-accent font-bold text-sm group-hover:underline">Learn More &rarr;</span>
+        </a>
+
+        <!-- Drainage & Contours -->
+        <a href="/services/#contour-banks" class="group block bg-white border border-border rounded-lg shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 p-6 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
+          <div class="mb-4">
+            <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 8c4 2 8-2 12 0s8-2 12 0M4 16c4 2 8-2 12 0s8-2 12 0M4 24c4 2 8-2 12 0s8-2 12 0M16 4v4M16 12v4M16 20v4" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-bold text-primary mb-2">Drainage & Contours</h3>
+          <p class="text-text-muted font-body text-sm leading-relaxed mb-4">Contour bank installation and removal, drainage channels, erosion control.</p>
+          <span class="text-accent font-bold text-sm group-hover:underline">Learn More &rarr;</span>
+        </a>
+
+        <!-- Land Clearing -->
+        <a href="/services/#tree-clearing" class="group block bg-white border border-border rounded-lg shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 p-6 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
+          <div class="mb-4">
+            <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 4v8M16 28v-8M16 12c-4 0-8 3-8 8h16c0-5-4-8-8-8zM12 28h8M8 20H4M28 20h-4" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-bold text-primary mb-2">Land Clearing</h3>
+          <p class="text-text-muted font-body text-sm leading-relaxed mb-4">Fence line clearing, firebreaks, paddock reclamation, stump removal.</p>
+          <span class="text-accent font-bold text-sm group-hover:underline">Learn More &rarr;</span>
+        </a>
+
+        <!-- Civil Earthworks -->
+        <a href="/services/#farm-roads" class="group block bg-white border border-border rounded-lg shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 p-6 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
+          <div class="mb-4">
+            <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 24h24M4 24l4-8h16l4 8M10 16V8h12v8M8 16h16" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-bold text-primary mb-2">Civil Earthworks</h3>
+          <p class="text-text-muted font-body text-sm leading-relaxed mb-4">Road building and maintenance, site preparation, bulk material movement.</p>
+          <span class="text-accent font-bold text-sm group-hover:underline">Learn More &rarr;</span>
+        </a>
+
+        <!-- Wet Hire -->
+        <a href="/services/" class="group block bg-white border border-border rounded-lg shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 p-6 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
+          <div class="mb-4">
+            <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.5">
+              <circle cx="16" cy="10" r="5" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 28v-2a8 8 0 0116 0v2" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-bold text-primary mb-2">Wet Hire</h3>
+          <p class="text-text-muted font-body text-sm leading-relaxed mb-4">Equipment and experienced operator. We handle the job.</p>
+          <span class="text-accent font-bold text-sm group-hover:underline">Learn More &rarr;</span>
+        </a>
+
+        <!-- Dry Hire -->
+        <a href="/services/" class="group block bg-white border border-border rounded-lg shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 p-6 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
+          <div class="mb-4">
+            <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20 8a4 4 0 00-8 0v4h8V8zM10 12h12l1 16H9L10 12z" />
+              <circle cx="16" cy="20" r="2" />
+              <path stroke-linecap="round" d="M16 22v3" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-bold text-primary mb-2">Dry Hire</h3>
+          <p class="text-text-muted font-body text-sm leading-relaxed mb-4">Equipment only. Your crew, your schedule.</p>
+          <span class="text-accent font-bold text-sm group-hover:underline">Learn More &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 4 — Featured Equipment
+       ============================================ -->
+  <section class="relative bg-gradient-to-br from-primary to-primary-light" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 60px)); padding-bottom: 60px;">
+    <!-- Noise texture overlay -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise2)' opacity='1'/%3E%3C/svg%3E&quot;);"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+        <h2 class="font-display text-3xl lg:text-4xl font-bold text-white">Our Fleet</h2>
+        <p class="mt-4 text-lg text-slate-300 font-body">
+          Late-model Caterpillar machinery maintained by a qualified heavy diesel mechanic
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        {featured.map((item) => (
+          <a href={`/equipment/${item.data.category}/${item.data.slug}/`} class="group block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:bg-white/10 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
+            <div class="aspect-[4/3] bg-gradient-to-br from-primary-light to-primary overflow-hidden">
+              {item.data.heroImage ? (
+                <Image
+                  src={item.data.heroImage}
+                  alt={`${item.data.name} available for hire`}
+                  class="w-full h-full object-cover"
+                  widths={[400, 800]}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center text-text-muted text-sm font-body">[Photo coming soon]</div>
+              )}
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-bold text-white mb-2">{item.data.name}</h3>
+              {item.data.operatingWeight && (
+                <p class="text-slate-300 text-sm font-body mb-3">Operating Weight: {item.data.operatingWeight}</p>
+              )}
+              {item.data.payload && (
+                <p class="text-slate-300 text-sm font-body mb-3">Payload: {item.data.payload}</p>
+              )}
+              <div class="flex flex-wrap gap-2 mb-4">
+                {item.data.hireTypes.map((type: string) => (
+                  <span class="inline-block border border-accent text-accent text-xs font-bold px-2 py-1 rounded">
+                    {type === 'wet' ? 'Wet Hire' : 'Dry Hire'}
+                  </span>
+                ))}
+              </div>
+              <span class="text-accent font-bold text-sm group-hover:underline">View Details &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="/equipment/"
+          class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white/10 transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[48px]"
+        >
+          View Full Fleet &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 5 — Wet & Dry Hire Explained
+       ============================================ -->
+  <section class="bg-surface relative" style="clip-path: polygon(0 0, 100% 60px, 100% 100%, 0 100%); padding-top: 60px;">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <!-- Wet Hire Card -->
+        <div class="bg-white border border-border rounded-lg shadow-sm p-8 lg:p-10">
+          <h3 class="font-display text-2xl font-bold text-primary mb-2">Wet Hire</h3>
+          <p class="text-lg text-text-muted font-body mb-6">Equipment and Experienced Operator</p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 text-accent mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-text font-body">Fully operated by trained professionals</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 text-accent mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-text font-body">We handle logistics and transport</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 text-accent mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-text font-body">Operator insurance covered</span>
+            </li>
+          </ul>
+          <a
+            href="/services/"
+            class="inline-flex items-center text-accent font-bold hover:underline focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded"
+          >
+            Learn More &rarr;
+          </a>
+        </div>
+
+        <!-- Dry Hire Card -->
+        <div class="bg-white border border-border rounded-lg shadow-sm p-8 lg:p-10">
+          <h3 class="font-display text-2xl font-bold text-primary mb-2">Dry Hire</h3>
+          <p class="text-lg text-text-muted font-body mb-6">Equipment Only</p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 text-accent mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-text font-body">Lower daily rate</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 text-accent mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-text font-body">Your crew, your schedule</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 text-accent mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-text font-body">Flexible hire terms</span>
+            </li>
+          </ul>
+          <a
+            href="/services/"
+            class="inline-flex items-center text-accent font-bold hover:underline focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded"
+          >
+            Learn More &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 6 — Why CM Equipment Hire
+       ============================================ -->
+  <section class="relative bg-gradient-to-br from-primary to-primary-light" style="clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 100%); padding-top: 60px;">
+    <!-- Noise texture overlay -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise3'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise3)' opacity='1'/%3E%3C/svg%3E&quot;);"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white text-center mb-12 lg:mb-16">Why CM Equipment Hire</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <!-- Local Wheatbelt Operator -->
+        <div class="flex gap-4">
+          <div class="flex-shrink-0">
+            <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 4l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold text-white mb-2">Local Wheatbelt Operator</h3>
+            <p class="text-slate-300 font-body leading-relaxed">We're based in Bulyee and farm over 4,000 hectares in the Corrigin area ourselves. We understand farming because we do it.</p>
+          </div>
+        </div>
+
+        <!-- Mechanic-Maintained Fleet -->
+        <div class="flex gap-4">
+          <div class="flex-shrink-0">
+            <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 4l-2 8-8 2 8 2 2 8 2-8 8-2-8-2-2-8z" />
+              <circle cx="7" cy="7" r="2" />
+              <circle cx="25" cy="25" r="2" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold text-white mb-2">Mechanic-Maintained Fleet</h3>
+            <p class="text-slate-300 font-body leading-relaxed">Every machine is personally inspected and serviced by a qualified heavy diesel mechanic. No mystery maintenance histories, no surprises on site.</p>
+          </div>
+        </div>
+
+        <!-- Flexible Hire Terms -->
+        <div class="flex gap-4">
+          <div class="flex-shrink-0">
+            <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.5">
+              <rect x="4" y="6" width="24" height="20" rx="2" />
+              <path stroke-linecap="round" d="M4 12h24M10 4v4M22 4v4M10 18h4M10 22h8" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold text-white mb-2">Flexible Hire Terms</h3>
+            <p class="text-slate-300 font-body leading-relaxed">Day rate, weekly, or long-term. Wet or dry. We structure the hire around your job, not the other way around.</p>
+          </div>
+        </div>
+
+        <!-- We Come to You -->
+        <div class="flex gap-4">
+          <div class="flex-shrink-0">
+            <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 4C10 4 6 9 6 14c0 8 10 14 10 14s10-6 10-14c0-5-4-10-10-10z" />
+              <circle cx="16" cy="14" r="4" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold text-white mb-2">We Come to You</h3>
+            <p class="text-slate-300 font-body leading-relaxed">Wheatbelt, Perth metro, Great Southern, Pilbara, Goldfields &mdash; we deliver to your site, wherever the job is.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 7 — CTA Banner
+       ============================================ -->
+  <section class="bg-accent">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20 text-center">
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-primary mb-6">Ready to Get Your Project Moving?</h2>
+      <a
+        href="tel:0487558563"
+        class="block text-3xl lg:text-4xl font-display font-bold text-primary hover:text-primary-light transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-accent rounded mb-4"
+      >
+        0487 558 563
+      </a>
+      <a
+        href="/contact/"
+        class="inline-flex items-center text-primary font-bold text-lg hover:underline focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-accent rounded"
+      >
+        Or request a quote online &rarr;
+      </a>
+    </div>
+  </section>
+</BaseLayout>

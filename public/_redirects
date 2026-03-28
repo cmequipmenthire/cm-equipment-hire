@@ -1,0 +1,21 @@
+# Service sub-page redirects (pages deleted — redirect to single services page)
+/services/dam-construction /services/#dam-construction 301
+/services/dam-construction/ /services/#dam-construction 301
+/services/drainage-and-contours /services/#contour-banks 301
+/services/drainage-and-contours/ /services/#contour-banks 301
+/services/land-clearing /services/#tree-clearing 301
+/services/land-clearing/ /services/#tree-clearing 301
+/services/civil-earthworks /services/#farm-roads 301
+/services/civil-earthworks/ /services/#farm-roads 301
+
+# Equipment category redirects (category index pages deleted)
+/equipment/excavators /equipment/ 301
+/equipment/excavators/ /equipment/ 301
+/equipment/dump-trucks /equipment/ 301
+/equipment/dump-trucks/ /equipment/ 301
+
+# Keystatic CMS only runs during local dev (npm run dev)
+# In production static builds, /keystatic routes return 404 — this is expected
+
+# www to non-www canonical
+https://www.cmequipmenthire.com.au/* https://cmequipmenthire.com.au/:splat 301
