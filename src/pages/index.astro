@@ -118,8 +118,16 @@ const featured = allEquipment
   <!-- ============================================
        SECTION 3 — What We Do
        ============================================ -->
-  <section class="bg-surface relative" style="clip-path: polygon(0 0, 100% 60px, 100% 100%, 0 100%); padding-top: 60px;">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+  <section class="bg-surface relative overflow-hidden" style="clip-path: polygon(0 0, 100% 60px, 100% 100%, 0 100%); padding-top: 60px;">
+    <!-- Watermark logo -->
+    <img
+      src="/assets/logo.png"
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] max-w-4xl"
+      style="opacity: 0.04;"
+    />
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
       <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
         <h2 class="font-display text-3xl lg:text-4xl font-bold text-primary">What We Do</h2>
         <p class="mt-4 text-lg text-text-muted font-body">
@@ -415,21 +423,31 @@ const featured = allEquipment
   <!-- ============================================
        SECTION 7 — CTA Banner
        ============================================ -->
-  <section class="bg-accent">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20 text-center">
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-primary mb-6">Ready to Get Your Project Moving?</h2>
-      <a
-        href="tel:0487558563"
-        class="block text-3xl lg:text-4xl font-display font-bold text-primary hover:text-primary-light transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-accent rounded mb-4"
-      >
-        0487 558 563
-      </a>
-      <a
-        href="/contact/"
-        class="inline-flex items-center text-primary font-bold text-lg hover:underline focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-accent rounded"
-      >
-        Or request a quote online &rarr;
-      </a>
+  <section class="relative py-20 pb-28 lg:pb-20">
+    <!-- Background with dark overlay -->
+    <div class="absolute inset-0 bg-[#000000]" style="opacity: 0.70;"></div>
+    <div class="absolute inset-0 bg-accent"></div>
+    <div class="absolute inset-0" style="background: rgba(0,0,0,0.70);"></div>
+
+    <div class="relative z-10 mx-auto max-w-5xl px-6 text-center">
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-4">Ready to Get Your Project Moving?</h2>
+      <p class="text-white/80 font-body text-lg mb-10 max-w-2xl mx-auto">
+        Call us now or send through an enquiry — we'll get back to you within 2 hours.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="tel:0487558563"
+          class="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-4 text-lg font-bold text-primary hover:bg-accent-hover transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[48px]"
+        >
+          Call Now &mdash; 0487 558 563
+        </a>
+        <a
+          href="/contact/"
+          class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white/10 transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[48px]"
+        >
+          Request a Quote
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

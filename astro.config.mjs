@@ -8,7 +8,7 @@ import node from '@astrojs/node';
 const isDev = process.env.NODE_ENV !== 'production' && !process.argv.includes('build');
 
 export default defineConfig({
-  output: 'static',
+  output: isDev ? 'server' : 'static',
   site: 'https://cmequipmenthire.com.au',
   adapter: isDev ? node({ mode: 'standalone' }) : undefined,
   integrations: [react(), sitemap(), ...(isDev ? [keystatic()] : [])],
