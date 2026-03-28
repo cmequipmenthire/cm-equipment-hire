@@ -69,19 +69,7 @@ const pins = [
             role="img"
             aria-label="Map of Western Australia showing CM Equipment Hire job locations"
           >
-            <!-- White background circle behind WA -->
-            <circle cx="250" cy="375" r="280" fill="white" opacity="0.15" />
-            
-            <!-- WA state outline with gold border -->
-            <path
-              d="M 409,8 L 485,17 L 485,420 L 480,608 L 420,648 L 380,660 L 330,668 L 263,676 L 210,700 L 155,718 L 115,712 L 78,700 L 51,688 L 44,668 L 55,658 L 67,652 L 74,615 L 60,585 L 45,555 L 34,505 L 20,450 L 8,395 L 10,375 L 6,320 L 8,295 L 18,272 L 22,265 L 50,260 L 78,242 L 100,232 L 155,210 L 195,195 L 230,175 L 272,148 L 310,128 L 345,102 L 375,80 L 409,8 Z"
-              fill="#111111"
-              stroke="#D4AF37"
-              stroke-width="3"
-              filter="url(#glow)"
-            />
-            
-            <!-- SVG filter for subtle glow -->
+            <!-- WA state outline with gold border - more accurate shape -->
             <defs>
               <filter id="glow">
                 <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
@@ -91,6 +79,14 @@ const pins = [
                 </feMerge>
               </filter>
             </defs>
+            
+            <path
+              d="M 410,10 L 485,18 L 485,320 L 485,400 L 483,480 L 480,540 L 477,590 L 470,620 L 455,640 L 435,652 L 410,660 L 380,666 L 345,670 L 310,674 L 270,678 L 230,688 L 195,698 L 165,708 L 135,716 L 110,715 L 88,710 L 70,702 L 56,692 L 48,680 L 45,670 L 50,662 L 60,656 L 68,650 L 73,638 L 75,620 L 72,600 L 65,580 L 56,560 L 48,540 L 38,515 L 28,485 L 20,455 L 12,420 L 8,390 L 7,365 L 6,340 L 6,315 L 8,290 L 12,275 L 18,268 L 26,265 L 38,263 L 52,262 L 68,258 L 85,250 L 105,238 L 125,228 L 145,218 L 165,208 L 185,198 L 205,188 L 225,178 L 248,165 L 270,152 L 292,138 L 315,124 L 338,108 L 360,92 L 380,75 L 398,55 L 410,35 Z"
+              fill="#111111"
+              stroke="#D4AF37"
+              stroke-width="3"
+              filter="url(#glow)"
+            />
 
             <text x="195" y="200" font-family="sans-serif" font-size="11" fill="#444444" text-anchor="middle" letter-spacing="2">PILBARA</text>
             <text x="290" y="510" font-family="sans-serif" font-size="10" fill="#444444" text-anchor="middle" letter-spacing="1">GOLDFIELDS</text>
