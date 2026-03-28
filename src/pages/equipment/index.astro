@@ -91,12 +91,20 @@ const sorted = allEquipment.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
           We can source the right machine for your job within 30 days.
           Tell us what you need and we'll find it.
         </p>
-        <a
-          href="tel:0487558563"
-          class="inline-block bg-accent text-primary font-body font-bold text-lg px-10 py-4 rounded-lg hover:bg-accent-hover transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-        >
-          Call Us &mdash; 0487 558 563
-        </a>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="tel:0487558563"
+            class="inline-flex items-center justify-center rounded-lg border-2 border-accent px-8 py-4 text-lg font-bold text-accent hover:bg-accent hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[48px]"
+          >
+            Call Now
+          </a>
+          <a
+            href="/contact/"
+            class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-lg font-bold text-white hover:bg-white/10 transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[48px]"
+          >
+            Request a Quote
+          </a>
+        </div>
       </div>
     </section>
   </main>
