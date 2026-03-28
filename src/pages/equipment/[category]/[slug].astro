@@ -135,7 +135,7 @@ const visibleSpecs = specs.filter((s) => s.value);
             <h2 class="font-display text-2xl font-bold text-primary mb-4">Hire Options</h2>
             <div class="flex flex-wrap gap-3">
               {data.hireTypes.map((type: string) => (
-                <span class="inline-flex items-center rounded-lg bg-accent px-4 py-2 text-sm font-bold text-primary">
+                <span class="inline-flex items-center rounded-lg bg-accent/50 border-2 border-accent px-4 py-2 text-sm font-bold text-primary">
                   {type === 'wet' ? 'Wet Hire' : 'Dry Hire'}
                 </span>
               ))}
@@ -171,7 +171,7 @@ const visibleSpecs = specs.filter((s) => s.value);
             <h3 class="font-display text-xl font-bold text-primary mb-6">Enquire About This Machine</h3>
             <a
               href="tel:0487558563"
-              class="flex items-center justify-center rounded-lg bg-accent px-6 py-4 text-lg font-bold text-primary hover:bg-accent-hover transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[48px] w-full mb-4"
+              class="flex items-center justify-center rounded-lg bg-accent/50 border-2 border-accent px-6 py-4 text-lg font-bold text-primary hover:bg-accent-hover transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[48px] w-full mb-4"
             >
               Call Now
             </a>
