@@ -1,5 +1,5 @@
 ---
-name: Caterpillar 16M Motor Grader
+name: Caterpillar 16M Grader
 slug: caterpillar-16m-grader
 category: graders
 brand: Caterpillar
@@ -19,8 +19,8 @@ idealFor:
   - Large-scale site levelling
   - Airstrip maintenance
   - Drainage channel grading
-metaTitle: "Caterpillar 16M Motor Grader Hire WA | CM Equipment Hire"
-metaDescription: "Hire a Cat 16M Motor Grader in WA. 4.88m blade for contour banks, farm roads, and site levelling. Wet or dry hire. Call 0487 558 563."
+metaTitle: "Caterpillar 16M Grader Hire WA | CM Equipment Hire"
+metaDescription: "Hire a Cat 16M Grader in WA. 4.88m blade for contour banks, farm roads, and site levelling. Wet or dry hire. Call 0487 558 563."
 featured: true
 sortOrder: 4
 ---
