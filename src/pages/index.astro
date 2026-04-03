@@ -238,6 +238,7 @@ const featured = allEquipment
                   src={item.data.heroImage}
                   alt={`${item.data.name} available for hire`}
                   class="w-full h-full object-cover"
+                  style={item.data.objectPosition ? `object-position: ${item.data.objectPosition}` : undefined}
                   widths={[400, 800]}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />

@@ -6,6 +6,7 @@ brand: Caterpillar
 model: "740B"
 year: 2015
 heroImage: ../../assets/equipment/740b/740b-shed.jpeg
+objectPosition: "center 30%"
 payload: "38 tonnes"
 engine: "Cat C15 ACERT, 350 kW (475 hp)"
 heapedCapacity: "23.0 m³"
