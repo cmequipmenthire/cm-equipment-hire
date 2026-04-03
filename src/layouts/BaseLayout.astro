@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import StickyMobileBar from '../components/StickyMobileBar.astro';
 import FloatingDesktopCTA from '../components/FloatingDesktopCTA.astro';
+import FloatingTextButton from '../components/FloatingTextButton.astro';
 
 interface Props {
   title: string;
@@ -76,5 +77,6 @@ const canonical = canonicalUrl || Astro.url.href;
     <Footer />
     <StickyMobileBar />
     <FloatingDesktopCTA />
+    <FloatingTextButton />
   </body>
 </html>
