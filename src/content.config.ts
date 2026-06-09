@@ -6,7 +6,7 @@ const equipment = defineCollection({
   schema: ({ image }) => z.object({
     name: z.string(),
     slug: z.string(),
-    category: z.enum(['excavators', 'dump-trucks', 'wheel-loaders', 'graders', 'water-carts', 'rollers']),
+    category: z.enum(['excavators', 'dump-trucks', 'wheel-loaders', 'graders', 'water-carts', 'rollers', 'ag-equipment']),
     brand: z.string(),
     model: z.string(),
     year: z.number().optional(),
