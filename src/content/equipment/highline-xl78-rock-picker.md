@@ -6,14 +6,13 @@ brand: Highline
 model: "XL-78"
 year: 2022
 heroImage: ../../assets/equipment/highline-xl78-rock-picker/rock-picker-hero.jpg
-objectPosition: "center 40%"
 hireTypes:
   - dry
 idealFor:
   - Paddock clearing
-  - Rockland preparation
-  - Pre-seeding rock removal
+  - Rock removal before seeding
   - New land development
+  - Cropping paddock preparation
 metaTitle: "Highline XL-78 Rock Picker Hire WA | CM Equipment Hire"
 metaDescription: "Hire a 2022 Highline XL-78 rock picker in WA. Dry hire available. Maintained by a diesel mechanic. Call 0487 558 563."
 featured: true
